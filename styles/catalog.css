@@ -13,21 +13,21 @@
     margin-top: 20px;
 }
 
-.btn-group > a {
-	width: 200%;
-	height: 50px;
-	cursor: pointer;
-	border: none;
+.btn-group>a {
+    width: 200%;
+    height: 50px;
+    cursor: pointer;
+    border: none;
     border-radius: 10px;
-	display: inline;
-	align-items: center;
-	justify-content: center;
-	background-color: #1b2845;
-	background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
-	background-size: 200% 100%;
-	background-position: left;
-	background-repeat: no-repeat;
-	transition: 500ms;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    background-size: 200% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition: 500ms;
     color: white;
     font-family: "Lato";
     font-size: 20px;
@@ -37,27 +37,27 @@
     text-decoration: none;
 }
 
-.btn-group > a:hover {
-	background-position: right;
+.btn-group>a:hover {
+    background-position: right;
 }
 
-.btn-group > a:before {
-	color: rgba(255,255,255,0.5);
-	font-size: 16px;
+.btn-group>a:before {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
     font-weight: bold;
     font-family: 'Lato';
-	position: absolute;
-	display: inline;
-	align-items: center;
-	justify-content: center;
-	width: 140px;
-	height: 40px;
-	background-color: #1b2845;
-	background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
-	transition: 500ms;
+    position: absolute;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+    transition: 500ms;
 }
 
-#catalogPage h1{
+#catalogPage h1 {
     color: white;
     text-align: center;
     margin-top: 30px;
@@ -66,11 +66,11 @@
     text-shadow: 5px 2px black;
 }
 
-.card-box > img {
+.card-box>img {
     display: block;
-    width: 250px;
+    max-width: 250px;
     border-radius: 15px;
-
+    max-height: 150px;
 }
 
 .btn-group {
@@ -78,7 +78,7 @@
     margin-top: 20px;
 }
 
-#catalogPage > p {
+#catalogPage>p {
     font-size: 40px;
     color: #45a29e;
     font-weight: bolder;
@@ -87,7 +87,7 @@
     text-shadow: 2px 2px black solid;
 }
 
-#search > input[type=text] {
+#search>input[type=text] {
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #384049;
@@ -102,7 +102,7 @@
     margin: 0 0.5em 1em 0;
 }
 
-#search > input[type=text]::-webkit-input-placeholder{
+#search>input[type=text]::-webkit-input-placeholder {
     color: #343b44;
     line-height: 1.2;
     -webkit-transition: all 0.2s ease;
@@ -125,27 +125,27 @@ input[type=text]:hover {
 
 .button-list {
     width: 150px;
-	height: 50px;
-	cursor: pointer;
-	border: none;
-  border-radius: 10px;
-	display: inline;
-	align-items: center;
-	justify-content: center;
-	background-color: #1b2845;
-	background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
-	background-size: 200% 100%;
-	background-position: left;
-	background-repeat: no-repeat;
-	transition: 500ms;
-  color: white;
-  font-family: "Lato";
-  font-size: 20px;
-  margin-bottom: 5px;
-  margin-top: 20px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+    background-size: 200% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition: 500ms;
+    color: white;
+    font-family: "Lato";
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 20px;
 }
 
-.search-result .no-result{
+.search-result .no-result {
     margin: 1em auto;
     padding: 2em;
     width: 25em;
@@ -184,7 +184,7 @@ input[type=text]:hover {
 
 }
 
-#searchPage > h1 {
+#searchPage>h1 {
     color: white;
     text-align: center;
     margin-top: 30px;
