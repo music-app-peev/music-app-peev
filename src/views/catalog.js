@@ -17,11 +17,12 @@ const songCard = (song) => html`
     <img src=${song.imgUrl}>
     <div>
         <div class="text-center">
-            <p class="artist">Artist: ${song.artist}</p>
-            <p class="name">Song Name: ${song.name}</p>
-            <p class="genre">Genre: ${song.genre}</p>
-            <p class="year">Song Year: ${song.year}</p>
-            <p class="btn-group"><a href=${song.playUrl}>Play</a></p>
+            <p class="artist">Artist: <span style="color: white">${song.artist}</span></p>
+            <p class="name">Song Name: <span style="color: white">${song.name}</span></p>
+            <p class="genre">Genre: <span style="color: white">${song.genre}</span></p>
+            <p class="year">Song Year: <span style="color: white">${song.year}</span></p>
+            <!-- <p class="btn-group"><a href=${song.playUrl}>Play</a></p> -->
+            <iframe width="280" height="155" src="https://www.youtube.com/embed/${song.playUrl.split('=')[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         ${getUserData()
           ? html`<div class="btn-group"><a href="/details/${song.objectId}" id="details">Details</a></div>`
