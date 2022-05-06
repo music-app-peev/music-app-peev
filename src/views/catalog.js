@@ -22,6 +22,7 @@ const songCard = (song) => html`
             <p class="genre">Genre: <span style="color: white">${song.genre}</span></p>
             <p class="year">Song Year: <span style="color: white">${song.year}</span></p>
             <!-- <p class="btn-group"><a href=${song.playUrl}>Play</a></p> -->
+            <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.youtube.com">
             <iframe width="280" height="155" src="https://www.youtube.com/embed/${song.playUrl.split('=')[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         ${getUserData()
