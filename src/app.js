@@ -1,4 +1,4 @@
-import { page } from '/lib.js';
+import { page } from './lib.js';
 import { homePage } from './views/home.js';
 import decorateContext, { updateUserNav } from "./middlewares/decorateContext.js";
 import { loginPage } from './views/login.js';
