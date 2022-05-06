@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Petar Peev Music Application</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script type="module" src="./src/app.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <header>
+            <nav>
+                <img src="./images/musicLogo.png">
+                <a href="/">Home</a>
+                <ul>
+                    <li><a href="./catalog">Catalog</a></li>
+                    <li><a href="./search">Search</a></li>
+
+                    <div id="guest">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    </div>
+
+                    <div id="user">
+                        <li><a href="/create">Create Song</a></li>
+                        <li><a id="logoutBtn" href="javascript:void(0)">Logout</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content"></main>
+
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>

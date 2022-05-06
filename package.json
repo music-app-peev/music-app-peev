@@ -1,0 +1,17 @@
+{
+  "name": "musicApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "lit-html": "^2.2.3",
+    "page": "^1.11.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
