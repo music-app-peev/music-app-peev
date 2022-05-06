@@ -1,67 +1,77 @@
-// import { editAlbum, getAlbumById } from "../api/data.js";
-// import { html } from "../lib.js";
+import { editSong, getSongById } from "../api/data.js";
+import { html } from "../lib.js";
 
 
-// const editTemplate = (album, onSubmit) => html`
-// <section class="editPage">
-//     <form @submit=${onSubmit}>
-//         <fieldset>
-//             <legend>Edit Album</legend>
+const editTemplate = (song, onSubmit) => html`
+<section class="editPage">
+    <form @submit=${onSubmit}>
+        <fieldset>
+            <legend>Edit Song</legend>
 
-//             <div class="container">
-//                 <label for="name" class="vhide">Album name</label>
-//                 <input id="name" name="name" class="name" type="text" .value=${album.name}>
+            <div class="container">
+                <label for="name" class="vhide">Song name</label>
+                <input id="name" name="name" class="name" type="text" .value=${song.name}>
 
-//                 <label for="imgUrl" class="vhide">Image Url</label>
-//                 <input id="imgUrl" name="imgUrl" class="imgUrl" type="text" .value=${album.imgUrl}>
+                <label for="artist" class="vhide">Artist</label>
+                <input id="artist" name="artist" class="artist" type="text" .value=${song.artist}>
 
-//                 <label for="price" class="vhide">Price</label>
-//                 <input id="price" name="price" class="price" type="text" .value=${album.price}>
+                <label for="year" class="vhide">Release date</label>
+                <input id="year" name="year" class="year" type="text" .value=${song.year}>
 
-//                 <label for="releaseDate" class="vhide">Release date</label>
-//                 <input id="releaseDate" name="releaseDate" class="releaseDate" type="text" .value=${album.releaseDate}>
+                <label for="genre" class="vhide">Genre</label>
+                <input id="genre" name="genre" class="genre" type="text" .value=${song.genre}>
 
-//                 <label for="artist" class="vhide">Artist</label>
-//                 <input id="artist" name="artist" class="artist" type="text" .value=${album.artist}>
+                <label for="imgUrl" class="vhide">Image Url</label>
+                <input id="imgUrl" name="imgUrl" class="imgUrl" type="text" .value=${song.imgUrl}>
 
-//                 <label for="genre" class="vhide">Genre</label>
-//                 <input id="genre" name="genre" class="genre" type="text" .value=${album.genre}>
+                <label for="playUrl" class="vhide">Song Url</label>
+                <input id="playUrl" name="playUrl" class="playUrl" type="text" .value=${song.playUrl}>
 
-//                 <label for="description" class="vhide">Description</label>
-//                 <textarea name="description" class="description" rows="10" cols="10"
-//                     .value=${album.description}></textarea>
+                <label for="description" class="vhide">Description</label>
+                <textarea name="description" class="description" .value=${song.description}></textarea>
 
-//                 <button class="edit-album" type="submit">Edit Album</button>
-//             </div>
-//         </fieldset>
-//     </form>
-// </section>`;
+                <button class="edit-album" type="submit">Edit Song</button>
+            </div>
+        </fieldset>
+    </form>
+</section>`;
 
-// export async function editPage(ctx) {
-//     const album = await getAlbumById(ctx.params.id);
+export async function editPage(ctx) {
+    const song = await getSongById(ctx.params.id);
 
-//     ctx.render(editTemplate(album, onSubmit));
+    // console.log(song.results);
 
-//     async function onSubmit(event) {
-//         event.preventDefault();
+    ctx.render(editTemplate(song.results[0], onSubmit));
 
-//         const formData = new FormData(event.target);
+    async function onSubmit(event) {
+        event.preventDefault();
 
-//         const name = formData.get('name').trim();
-//         const imgUrl = formData.get('imgUrl').trim();
-//         const price = formData.get('price').trim();
-//         const releaseDate = formData.get('releaseDate').trim();
-//         const artist = formData.get('artist').trim();
-//         const genre = formData.get('genre').trim();
-//         const description = formData.get('description').trim();
+        const formData = new FormData(event.target);
 
-//         if (name == "" || imgUrl == "" || price == "" || releaseDate == "" || artist == "" || genre == "" || description == "") {
-//             return alert('All fields are required!')
-//         };
+        const name = formData.get('name').trim();
+        const artist = formData.get('artist').trim();
+        const year = formData.get('year').trim();
+        const genre = formData.get('genre').trim();
+        const imgUrl = formData.get('imgUrl').trim();
+        const playUrl = formData.get('playUrl').trim();
+        const description = formData.get('description').trim();
 
-//         await editAlbum(ctx.params.id, { name, imgUrl, price, releaseDate, artist, genre, description });
-//         ctx.updateUserNav();
+        if (name == "" || imgUrl == "" || year == "" || artist == "" || genre == "" || playUrl == "") {
+            return alert('All fields are required!');
+        };
 
-//         ctx.page.redirect('/details/' + ctx.params.id);
-//     };
-// };
+        await editSong(ctx.params.id, {
+            name,
+            artist,
+            year,
+            genre,
+            imgUrl,
+            playUrl,
+            description
+        });
+
+        ctx.updateUserNav();
+
+        ctx.page.redirect('/details/' + ctx.params.id);
+    };
+};

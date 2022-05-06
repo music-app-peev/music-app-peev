@@ -16,8 +16,8 @@ export async function getSongById(id) {
     return api.get(`/classes/Songs?where={"objectId": "${id}"}`);
 };
 
-export async function editSong(id, album) {
-    // return api.put('/classes/Songs/' + id, album);
+export async function editSong(id, song) {
+    return api.put('/classes/Songs/' + id, song);
 };
 
 export async function deleteSong(id) {

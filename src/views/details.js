@@ -33,7 +33,7 @@ const detailsTemplate = (song, isOwner, onDelete) => html`
 export async function detailsPage(ctx) {
 
     const song = await getSongById(ctx.params.id);
-    console.log(song.results[0]);
+    // console.log(song.results[0]);
     const userData = getUserData();
 
     const isOwner = userData && userData.id == song.results[0].ownerId;
