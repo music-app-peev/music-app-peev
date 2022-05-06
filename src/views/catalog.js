@@ -34,7 +34,7 @@ export async function allSongsPage(ctx) {
 
     const songs = await getAllSongs();
 
-    console.log(songs);
+    // console.log(songs);
 
     ctx.render(allSongsTemplate(songs.results));
 };

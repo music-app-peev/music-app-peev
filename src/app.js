@@ -6,7 +6,7 @@ import { registerPage } from './views/register.js';
 import { allSongsPage } from './views/catalog.js';
 import { createPage } from './views/create.js';
 import { detailsPage } from './views/details.js';
-// import { editPage } from './views/edit.js';
+import { editPage } from './views/edit.js';
 // import { searchPage } from './views/search.js';
 // import { mySongsPage } from './views/mySongs.js';
 
@@ -18,7 +18,7 @@ page('/register', registerPage);
 page('/catalog', allSongsPage);
 page('/create', createPage);
 page('/details/:id', detailsPage);
-// page('/edit/:id', editPage);
+page('/edit/:id', editPage);
 // page('/search', searchPage);
 
 updateUserNav();
