@@ -15,7 +15,7 @@ page(decorateContext);
 page('/', homePage);
 page('/login', loginPage);
 page('/register', registerPage);
-page('/catalog', allSongsPage);
+page('./catalog', allSongsPage);
 page('/create', createPage);
 page('/details/:id', detailsPage);
 // page('/edit/:id', editPage);
