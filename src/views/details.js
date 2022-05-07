@@ -11,12 +11,12 @@ const detailsTemplate = (song, isOwner, onDelete) => html`
         <div class="albumInfo">
             <div class="albumText">
 
-                <h3>Artist: ${song.artist}</h3>
-                <h1>Song Name: ${song.name}</h1>
+                <h2>Artist: ${song.artist}</h3>
+                <h1>Song: ${song.name}</h1>
                 <h4>Song Year: ${song.year}</h4>
                 <h4>Genre: $${song.genre}</h4>
-                <h4>Song URL: ${song.playUrl}</h4>
-                <p>Description: ${song.description}</p>
+                <h4>Song URL: <a>${song.playUrl}</h4>
+                <!-- <p>Description: ${song.description}</p> -->
             </div>
             <!-- Only for registered user and creator of the album-->
             ${isOwner ? html`

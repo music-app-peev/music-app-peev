@@ -26,8 +26,8 @@ const createTemplate = (onSubmit) => html`
                 <label for="playUrl" class="vhide">Song Url</label>
                 <input id="playUrl" name="playUrl" class="playUrl" type="text" placeholder="Song Url">
 
-                <label for="description" class="vhide">Description</label>
-                <textarea name="description" class="description" placeholder="Description"></textarea>
+                <!-- <label for="description" class="vhide">Description</label>
+                <textarea name="description" class="description" placeholder="Description"></textarea> -->
 
                 <button class="add-album" type="submit">Add New Song</button>
             </div>
@@ -49,7 +49,7 @@ export async function createPage(ctx) {
         const genre = formData.get('genre').trim();
         const imgUrl = formData.get('imgUrl').trim();
         const playUrl = formData.get('playUrl').trim();
-        const description = formData.get('description').trim();
+        // const description = formData.get('description').trim();
 
         if (name == "" || imgUrl == "" || year == "" || artist == "" || genre == "" || playUrl == "") {
             return alert('All fields are required!');
@@ -65,7 +65,7 @@ export async function createPage(ctx) {
             genre,
             imgUrl,
             playUrl,
-            description,
+            // description,
             ownerId
         });
         ctx.updateUserNav();

@@ -27,8 +27,8 @@ const editTemplate = (song, onSubmit) => html`
                 <label for="playUrl" class="vhide">Song Url</label>
                 <input id="playUrl" name="playUrl" class="playUrl" type="text" .value=${song.playUrl}>
 
-                <label for="description" class="vhide">Description</label>
-                <textarea name="description" class="description" .value=${song.description}></textarea>
+                <!-- <label for="description" class="vhide">Description</label>
+                <textarea name="description" class="description" .value=${song.description}></textarea> -->
 
                 <button class="edit-album" type="submit">Edit Song</button>
             </div>
@@ -54,7 +54,7 @@ export async function editPage(ctx) {
         const genre = formData.get('genre').trim();
         const imgUrl = formData.get('imgUrl').trim();
         const playUrl = formData.get('playUrl').trim();
-        const description = formData.get('description').trim();
+        // const description = formData.get('description').trim();
 
         if (name == "" || imgUrl == "" || year == "" || artist == "" || genre == "" || playUrl == "") {
             return alert('All fields are required!');
@@ -67,7 +67,7 @@ export async function editPage(ctx) {
             genre,
             imgUrl,
             playUrl,
-            description
+            // description
         });
 
         ctx.updateUserNav();

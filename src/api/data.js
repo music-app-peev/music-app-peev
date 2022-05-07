@@ -24,7 +24,7 @@ export async function deleteSong(id) {
     return api.del('/classes/Songs/' + id);
 };
 
-export async function searchSong(query) {
-    // return api.get(`/data/albums?where=name%20LIKE%20%22${query}%22`);
+export async function searchSong(search) {
+    return api.get(`/classes/Songs?where={"artist": {"$regex": "${search}"}}`);
 };
 
