@@ -32,9 +32,11 @@ const songCard = (song) => html`
 
 export async function allSongsPage(ctx) {
 
-    const songs = await getAllSongs();
+    const songsRequest = await getAllSongs();
+
+    let songs = songsRequest.results.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt));
 
     // console.log(songs);
 
-    ctx.render(allSongsTemplate(songs.results));
+    ctx.render(allSongsTemplate(songs));
 };
