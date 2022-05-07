@@ -69,7 +69,7 @@ export async function searchPage(ctx) {
         } else {
             const songs = await searchSong(search);
             
-            console.log(songs);
+            // console.log(songs);
 
             ctx.render(searchingTemp(songs.results, onSearch));
         };
