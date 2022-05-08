@@ -13,7 +13,7 @@ const detailsTemplate = (song, isOwner, onDelete) => html`
 
                 <h2>Artist: ${song.artist}</h3>
                 <h1>Song: ${song.name}</h1>
-                <h4>Song Year: ${song.year}</h4>
+                <h4>Year: ${song.year}</h4>
                 <h4>Genre: $${song.genre}</h4>
                 <h4>Song URL: <a>${song.playUrl}</h4>
                 <!-- <p>Description: ${song.description}</p> -->
