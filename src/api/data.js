@@ -28,3 +28,6 @@ export async function searchSong(search) {
     return api.get(`/classes/Songs?where={"artist": {"$regex": "${search}"}}`);
 };
 
+export async function getMySongs(userId) {
+    return api.get(`/classes/Songs?where={"ownerId": "${userId}"}`);
+};
