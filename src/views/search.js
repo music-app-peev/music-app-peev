@@ -20,7 +20,7 @@ const searchingTemp = (songs, onSearch) => html`
     <h1>Search by Artist Name</h1>
 
     <div class="search">
-        <input id="search-input" type="text" name="search" placeholder="Enter desired song's name">
+        <input id="search-input" type="text" name="search" placeholder="Enter artist name">
         <button @click=${onSearch} class="button-list">Search</button>
     </div>
 
