@@ -1,4 +1,4 @@
-import { searchSong , getAllSongs } from "../api/data.js";
+import { getAllSongs, searchSong  } from "../api/data.js";
 import { html } from "../lib.js";
 import { getUserData } from "../util.js";
 
@@ -62,7 +62,7 @@ export async function searchPage(ctx) {
     async  function onSearch() {
 
         const search = document.getElementById('search-input').value.toLowerCase().trim();
-        console.log(search);
+        // console.log(search);
 
         if (search == "") {
             return alert('Empty input');
