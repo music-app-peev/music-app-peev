@@ -59,19 +59,22 @@ export async function searchPage(ctx) {
 
     ctx.render(searchTemplate(onSearch));
 
-  async  function onSearch(event) {
+    async  function onSearch() {
 
-        const search = document.getElementById('search-input').value.trim();
+        const search = document.getElementById('search-input').value.toLowerCase().trim();
         console.log(search);
 
         if (search == "") {
             return alert('Empty input');
         } else {
-            const songs = await searchSong(search);
-            
-            // console.log(songs);
+            // const songs = await searchSong(search.toLowerCase());
 
-            ctx.render(searchingTemp(songs.results, onSearch));
+            let songs = await getAllSongs();
+            songs = songs.results.filter(s => s.artist.toLowerCase().includes(search));
+        //    console.log(songs);
+
+            // ctx.render(searchingTemp(songs.results, onSearch));
+            ctx.render(searchingTemp(songs, onSearch));
         };
     };
 };
